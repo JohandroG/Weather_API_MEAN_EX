@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MainServiceService} from './../main/main-service.service'
 
 @Component({
   selector: 'app-washington',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./washington.component.css']
 })
 export class WashingtonComponent implements OnInit {
+  
+  info:any = {}
 
-  constructor() { }
+  constructor(private _HttpService: MainServiceService) { }
 
   ngOnInit(): void {
+    this.getInformation();
+  }
+
+  getInformation():void{
+    this._HttpService.requestWashington()
+    .subscribe((data:any)=>{
+      this.info = data;
+      console.log(this.info);
+    })
   }
 
 }

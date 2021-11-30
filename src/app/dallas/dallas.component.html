@@ -4,11 +4,11 @@
     </div>
     <div class="below">
         <div class="info">
-            <h4>Humidity:</h4>
-            <h4>Temperature (Average):</h4>
-            <h4>Temperature (High):</h4>
-            <h4>Temperature (Low):</h4>
-            <h4>Status:</h4>
+            <h4>Humidity: {{info.main.humidity}}</h4>
+            <h4>Temperature (Average): {{info.main.temp}}</h4>
+            <h4>Temperature (High): {{info.main.temp_max}}</h4>
+            <h4>Temperature (Low): {{info.main.temp_min}}</h4>
+            <h4>Status: {{info.weather[0].description}}</h4>
         </div>
         <div class="img">
             <img src="https://images.pexels.com/photos/280193/pexels-photo-280193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>

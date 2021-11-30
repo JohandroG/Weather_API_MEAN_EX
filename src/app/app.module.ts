@@ -11,6 +11,10 @@ import { DallasComponent } from './dallas/dallas.component';
 import { WashingtonComponent } from './washington/washington.component';
 import { ChicagoComponent } from './chicago/chicago.component';
 
+import {HttpClientModule} from '@angular/common/http';
+import { MainServiceService } from './main/main-service.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +28,10 @@ import { ChicagoComponent } from './chicago/chicago.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MainServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MainServiceService} from './../main/main-service.service'
 
 @Component({
   selector: 'app-seattle',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeattleComponent implements OnInit {
 
-  constructor() { }
+  info:any = {}
+
+  constructor(private _HttpService: MainServiceService) { }
 
   ngOnInit(): void {
+    this.getInformation();
+  }
+
+  getInformation():void{
+    this._HttpService.requestSeattle()
+    .subscribe((data:any)=>{
+      this.info = data;
+      console.log(this.info);
+    })
   }
 
 }
+
+
